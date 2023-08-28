@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+      <h1>{{greetings}}</h1>
+    <form method="post">
+      {% csrf_token %}
+      <input type="number" name="Page">
+      <button type="submit">Выбрать</button>
+    </form>
+    {% for i in data %}
+      <ul>
+        <li>{{ i.models_name }}</li>
+      </ul>
+    {% endfor %}
+    {{curr_page}} из {{page_len}}
+  </body>
+</html>
